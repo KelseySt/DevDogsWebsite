@@ -4,7 +4,6 @@ export default function RolesHome() {
   const roles = [
     "Developers",
     "UI Designers",
-    "Impact-Havers",
     "Data Gurus",
     "Leaders",
   ];
@@ -25,14 +24,14 @@ export default function RolesHome() {
   }, [roles.length]);
 
   return (
-    <div className="text-right text-[3rem] font-semibold text-BulldogRed md:text-[4rem] lg:text-[5rem]">
-      <h1
+    <span className="flex font-semibold text-[#FF4583] lg:text-2xl">
+      <p
         className={`transform font-semibold transition-opacity duration-500 ease-in-out ${
           fade ? "opacity-100" : "opacity-0"
         }`}
       >
         {roles[currentIndex]}
-      </h1>
-    </div>
+      </p>
+    </span>
   );
 }

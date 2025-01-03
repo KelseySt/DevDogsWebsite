@@ -5,10 +5,13 @@ import "./NavBar.css";
 import Button from "./Button";
 import name2 from "../images/mascotwordlight.png";
 import logoOnly from "../images/logo.png";
+import blackOutline from "../images/BlackOutlineLogo.png";
+import whiteOutline from "../images/WhiteOutlineLogo.png";
 import Image from "next/image";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { useState, useEffect, useRef } from "react";
 import NavBarAvatar from "./NavbarAvatar";
+
 
 const navLinks = [
   { name: "Home", path: "/", isDropdown: false },
@@ -24,10 +27,10 @@ const NavBar = () => {
   const dropdownRef = useRef(null);
 
   const getLinkClasses = (path) => {
-    return `text-xl px-3 no-underline ${
+    return `text-xl px-3 no-underline font-semibold hover:text-[#FF4583] ${
       pathname === path
-        ? "text-GloryGloryRed font-semibold"
-        : "hover:text-GloryGloryRed"
+        ? "text-white "
+        : "hover:text-[#FF4583]"
     }`;
   };
 
@@ -54,27 +57,24 @@ const NavBar = () => {
   }, [isDropdownOpen]);
 
   return (
-    <div className="flex w-full flex-col items-center justify-around bg-[#31304b] p-[.8rem] font-semibold text-white sm:flex-row">
+    <div className="flex w-full flex-col items-center justify-around p-[.8rem] font-semibold text-white sm:flex-row">
       <div className="sm:hidden sm:w-[300px] md:block">
         <Link href="/">
+        <div className="flex gap-2">
           <Image
-            src={name2}
+            src={whiteOutline}
             alt="Mascot and DevDogs"
-            className="hidden h-[2.5em] w-auto md:block"
+            className="hidden h-[2.8em] w-auto md:block"
           />
+          <p className="hidden text-4xl mt-0.5 md:block">DevDogs</p>
+          </div>
         </Link>
       </div>
-      <div className="flex w-full items-center justify-between px-4 sm:hidden">
-        <Link href="/">
-          <Image
-            src={logoOnly}
-            alt="Mascot"
-            className="h-[3em] w-auto sm:h-[4em]"
-          />
-        </Link>
+      <div className="flex w-full items-center justify-between px-0 sm:hidden">
+        <div className="flex gap-6">
         {isDropdownOpen ? (
           <div className="flex flex-row">
-            <NavBarAvatar />
+            
             <XMarkIcon
               className="ml-3 w-[2rem] cursor-pointer transition-transform"
               onClick={toggleDropdown}
@@ -82,24 +82,34 @@ const NavBar = () => {
           </div>
         ) : (
           <div className="flex flex-row">
-            <NavBarAvatar />
+            
             <Bars3Icon
               className="ml-3 w-[2rem] cursor-pointer transition-transform"
               onClick={toggleDropdown}
             />
           </div>
         )}
+        <Link href="/">
+          <Image
+            src={whiteOutline}
+            alt="Mascot"
+            className="h-[3em] w-auto sm:h-[4em]"
+          />
+        </Link>
+        </div>
+        
+        <NavBarAvatar />
       </div>
       {isDropdownOpen && (
         <div
           ref={dropdownRef}
-          className="absolute left-0 top-[4rem] z-10 flex w-full flex-col items-start space-y-2 bg-[#31304b] px-4 py-4 sm:hidden"
+          className="absolute left-0 top-[4rem] z-10 flex w-full flex-col items-start space-y-2 bg-[#331B33] px-4 py-4 sm:hidden"
         >
           {navLinks.map(({ name, path }) => (
             <Link
               key={name}
               href={path}
-              className={`${getLinkClasses(path)} w-full rounded-md bg-[#31304b] bg-opacity-5 p-4 text-left text-[2rem] transition delay-100 ease-out`}
+              className={`${getLinkClasses(path)} w-full rounded-md bg-[#331B33] bg-opacity-5 p-4 text-center hover:text-[#FF4583] text-[2rem] transition delay-100 ease-out`}
             >
               <p>{name}</p>
             </Link>
@@ -115,15 +125,15 @@ const NavBar = () => {
           </Link>
         ))}
       </div>
-      <div className="invisible flex flex-row items-center align-middle sm:visible">
+      <div className="invisible flex flex-row items-center align-middle lg:visible">
         <Link
           target="_blank"
           href="https://discord.com/invite/MuyJ4f5xKE"
-          className="delay-50 hidden rounded-full bg-[#BA0C2F] p-2 text-lg font-medium text-white transition ease-in-out hover:bg-white hover:text-black md:text-xl lg:block"
+          className="delay-50 hidden rounded-full bg-[#FF4583] p-2 text-lg font-semibold text-white transition ease-in-out hover:bg-white hover:text-[#331B33] md:text-xl lg:text-2xl lg:block"
         >
-          <Button className="hidden">Join Us</Button>
+          <Button>Join Us</Button>
         </Link>
-        <div>
+        <div className="hidden md:block">
           <NavBarAvatar />
         </div>
       </div>

@@ -105,7 +105,7 @@ export default function NavBarAvatar() {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent
-          className="w-56 bg-[#31304b] text-white"
+          className="w-56 bg-[#201120] text-white"
           align="end"
           forceMount
         >

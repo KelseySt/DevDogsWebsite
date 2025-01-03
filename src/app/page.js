@@ -7,32 +7,85 @@ import mockup from "./images/mockup.png";
 import Image from "next/image";
 import Link from "next/link";
 import RolesHome from "./components/RolesHome";
+import Home1 from "./images/Home1.jpg";
+import EmblaCarousel from "./components/EmblaCarousel";
 
 const Home = () => {
+  const OPTIONS = { loop: true };
+  const imagesForCarousel = [
+    {
+      image: "/Events5.jpg",
+    },
+    {
+      image: "/Events1.jpg",
+    },
+    {
+      image: "/GroupPhoto5.jpg",
+    },
+    {
+      image: "/GroupPhoto5.jpg",
+    },
+    {
+      image: "/GroupPhoto5.jpg",
+    },
+  ];
   return (
-    <section id="base-background">
-      <div className="section section-home page-main-side-padding">
-        <div className="my-[2rem] flex flex-wrap items-center justify-center">
-          <div className="md:flex-2 text-center sm:text-left">
-            <h2 className="text-[2rem] font-semibold leading-10 text-MidnightBlue md:text-[2.5rem] lg:text-[3rem]">
-              Hey UGA!
-            </h2>
+    <section>
+      <div className="">
+        <div className="">
+          <div className="md:flex sm:block justify-around sm:text-left ">
+            <div className="my-2 md:my-auto mx-6 md:mx-2 md:ml-6 2xl:mx-auto leading-tight">
+            <h1 className="block text-[2rem] font-semibold text-[#FFF7F9] md:text-[2.2rem] xl:text-[3.8rem] 2xl:text-[4.5rem] 3xl:text-[5rem]">
+              Design software with
+            </h1>
 
-            <h1 className="inline text-[2rem] font-bold text-MidnightBlue sm:text-[3.5rem] md:text-[4rem] lg:text-[4.5rem]">
-              We&#39;re{" "}
+            <h1 className="inline text-[2rem] font-bold text-white sm:text-[2rem] md:text-[2.2rem] xl:text-[3.8rem] 2xl:text-[4.5rem] 3xl:text-[5rem]">
+              an <span className="text-[#FF4583]">Impact</span>
             </h1>
-            <h1 className="inline text-[2rem] font-bold text-GloryGloryRed sm:text-[3.5rem] md:text-[4rem] lg:text-[4.5rem]">
-              DevDogs,
-            </h1>
+            <div className="hidden md:block lg:text-2xl">
+              <p className="text-[#FFF7F9] flex lg:text-2xl">
+                We are a team of &nbsp;<RolesHome />
+              </p>
+              
+              <p className="text-[#FFF7F9] block lg:text-2xl">
+                at UGA developing some awesome software to better our community.
+              </p>
+              <Link
+                target="_blank"
+                href="https://github.com/DevDogs-UGA/Optimal-Schedule-Builder"
+                className="mt-2 md:mt-4 xl:mt-6 mr-[15rem] rounded-full font-semibold text-center block p-2 bg-[#FF4583] text-[#FFF7F9] hover:bg-white hover:text-[#331B33] transition delay-75 ease-in-out"
+              >
+                Current Project
+              </Link>
+            </div>
+            </div>
+            <Image className="md:rounded-tl-[10rem] lg:rounded-tl-[15rem] 2xl:rounded-tl-[20rem]  md:block md:size-1/2" src={Home1} alt="ACM OSP Bus App Mockup" width=""/>
+            <div className="mt-4 mx-6 md:hidden">
+              <p className="text-[#FFF7F9] flex">
+                We are a team of &nbsp;<RolesHome />
+              </p>
+              
+              <p className="text-[#FFF7F9] block">
+                at UGA developing some awesome software to better our community.
+              </p>
+
+              <Link
+                target="_blank"
+                href="https://github.com/DevDogs-UGA/Optimal-Schedule-Builder"
+                className="mt-2 mr-[15rem] rounded-full font-semibold text-center block p-2 bg-[#FF4583] text-[#FFF7F9] hover:bg-white hover:text-[#331B33] transition delay-75 ease-in-out"
+              >
+                Current Project
+              </Link>
+
+            </div>
           </div>
-
-          <div className="md:flex-1">
-            <Image
-              id="mascot"
-              src={logo}
-              alt="DevDogs Logo"
-              className="p-[22%]"
-            />
+          
+          <div className="xl:mx-48">
+          <EmblaCarousel
+            slides={imagesForCarousel}
+            banner={false}
+            options={OPTIONS}
+          />
           </div>
         </div>
 
@@ -97,7 +150,7 @@ const Home = () => {
           <div className="button-grid">
             <Link
               href="/about"
-              className="bg-#33334d m-4 rounded-full p-2 text-lg font-medium text-black transition delay-150 ease-in-out hover:bg-white hover:text-black md:text-xl"
+              className="bg-[#33334d] m-4 rounded-full p-2 text-lg font-medium text-black transition delay-150 ease-in-out hover:bg-white hover:text-black md:text-xl"
             >
               <Button>Learn More</Button>
             </Link>
