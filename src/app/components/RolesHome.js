@@ -25,13 +25,13 @@ export default function RolesHome() {
 
   return (
     <span className="flex font-semibold text-[#FF4583] lg:text-2xl">
-      <p
-        className={`transform font-semibold transition-opacity duration-500 ease-in-out ${
+      <span
+        className={`transform font-semibold transition-opacity duration-500 ease-in-out lg:text-2xl ${
           fade ? "opacity-100" : "opacity-0"
         }`}
       >
         {roles[currentIndex]}
-      </p>
+      </span>
     </span>
   );
 }

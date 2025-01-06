@@ -9,24 +9,22 @@ import Link from "next/link";
 import RolesHome from "./components/RolesHome";
 import Home1 from "./images/Home1.jpg";
 import EmblaCarousel from "./components/EmblaCarousel";
+import Bean from "./images/ImageBeanCollectionHigh.png"
 
 const Home = () => {
   const OPTIONS = { loop: true };
   const imagesForCarousel = [
     {
-      image: "/Events5.jpg",
+      image: "/Home2.jpg",
     },
     {
-      image: "/Events1.jpg",
+      image: "/Home3.jpg",
     },
     {
-      image: "/GroupPhoto5.jpg",
+      image: "/Home4.jpg",
     },
     {
-      image: "/GroupPhoto5.jpg",
-    },
-    {
-      image: "/GroupPhoto5.jpg",
+      image: "/Home5.jpg",
     },
   ];
   return (
@@ -59,7 +57,7 @@ const Home = () => {
               </Link>
             </div>
             </div>
-            <Image className="md:rounded-tl-[10rem] lg:rounded-tl-[15rem] 2xl:rounded-tl-[20rem]  md:block md:size-1/2" src={Home1} alt="ACM OSP Bus App Mockup" width=""/>
+            <Image className="md:rounded-tl-[10rem] lg:rounded-tl-[10rem] 2xl:rounded-tl-[20rem]  md:block md:size-1/2 lg:size-2/5" src={Home1} alt="ACM OSP Bus App Mockup" width=""/>
             <div className="mt-4 mx-6 md:hidden">
               <p className="text-[#FFF7F9] flex">
                 We are a team of &nbsp;<RolesHome />
@@ -80,7 +78,37 @@ const Home = () => {
             </div>
           </div>
           
-          <div className="xl:mx-48">
+          <div className="md:flex 2xl:mx-20">
+            <Image className="md:rounded-tl-[10rem] lg:rounded-tl-[15rem] 2xl:rounded-tl-[20rem]  md:block md:size-1/2" src={Bean} alt="ACM OSP Bus App Mockup" width=""/>
+          
+            <div className="block my-2 md:my-auto mx-6 md:mx-2 md:ml-6 2xl:mx-auto leading-tight">
+              <h1 className="block text-[2rem] font-semibold text-[#FFF7F9] md:text-[2.2rem] xl:text-[3.8rem] 2xl:text-[4.5rem] 3xl:text-[5rem]">
+                UGA's <span className="text-[#FF4583]">largest</span>
+              </h1>
+
+              <h1 className="inline text-[2rem] font-bold text-white sm:text-[2rem] md:text-[2.2rem] xl:text-[3.8rem] 2xl:text-[4.5rem] 3xl:text-[5rem]">
+                tech club 
+              </h1>
+              <div className="block lg:text-2xl">
+                <p className="text-[#FFF7F9] block lg:text-2xl">
+                  No matter the skills or background, we welcome everyone to come build software for better.
+                </p>
+              </div>
+              <div className="flex gap-4 text-center">
+                <div>
+                  203 students
+                </div>
+                <div>
+                  450 people impacted
+                </div>
+                <div>
+                  307 contributions
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
           <EmblaCarousel
             slides={imagesForCarousel}
             banner={false}
